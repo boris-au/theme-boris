@@ -1,9 +1,4 @@
 <header class="site-header">
-	{{ if templates.Exists "partials/microhook-profile-photo.html" }}
-	{{ partial "microhook-profile-photo.html" . }}
-	{{ else }}
-	<a href="/"><img src="{{ .Site.Author.avatar }}" alt="{{ .Site.Title }} Profile Photo" class="profile_photo u-photo" width="80" height="80"></a>
-	{{ end }}
 	{{ if templates.Exists "partials/microhook-title.html" }}
 	{{ partial "microhook-title.html" . }}
 	{{ else }}
