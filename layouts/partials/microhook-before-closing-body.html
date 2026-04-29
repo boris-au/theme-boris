@@ -1,27 +1,13 @@
 <script>
-(() => {
-  const normalizePath = (value) => {
-    const path = value.replace(/\/+$/, "")
-    return path === "" ? "/" : path
-  }
-
-  const currentPath = normalizePath(window.location.pathname)
-
-  document.querySelectorAll("nav.site-nav a.page-link").forEach((link) => {
-    const linkURL = new URL(link.getAttribute("href"), window.location.origin)
-
-    if (linkURL.origin !== window.location.origin) {
-      return
-    }
-
-    const isActive = normalizePath(linkURL.pathname) === currentPath
-    link.classList.toggle("active", isActive)
-
-    if (isActive) {
-      link.setAttribute("aria-current", "page")
-    } else {
-      link.removeAttribute("aria-current")
-    }
-  })
-})()
+    (function() {
+        console.log("DEBUG!~!!!!!");
+        var path = window.location.pathname;
+        var links = document.querySelectorAll("nav menu a");
+        for (var i = 0; i < links.length; i++) {
+            var href = links[i].getAttribute("href");
+            if (href !== "/" && path.indexOf(href) === 0) {
+                links[i].classList.add("active");
+            }
+        }
+    })();
 </script>
