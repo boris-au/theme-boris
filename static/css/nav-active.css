@@ -1,0 +1,7 @@
+/* Highlight the active nav tab */
+nav a.active,
+nav a.active:visited,
+nav a.active:hover {
+	background: var(--link);
+	color: var(--button-text);
+}
